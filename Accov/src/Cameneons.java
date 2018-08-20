@@ -7,16 +7,15 @@
  *
  * @author Peter Bardawil
  */
-public class Cameneons {
+public class Cameneons implements Runnable {
 
     public IdentificateurCameneos id; //chaque cameneon est represente par une couleur unique
 
-    //Pour faire definir une class pour les couleur des cameneon
-    public String couleur; //chaque cameneon a sa propre couleur
+    public Couleur monCouleur,autreCameneonCouleur;
 
-    public Cameneons(IdentificateurCameneos id, String couleur) {
+    public Cameneons(IdentificateurCameneos id, Couleur couleur) {
         this.id = id;
-        this.couleur = couleur;
+        this.monCouleur = couleur;
     }
 
     /**
@@ -27,7 +26,7 @@ public class Cameneons {
      * cameneos
      */
     public void donnerInformation(String infoCourant) {
-        System.out.println("Mon Identificateur est " + this.id + " Mon Couleur est: " + this.couleur + " et " + infoCourant);
+        System.out.println("Mon Identificateur est " + this.id + " Mon Couleur est: " + this.monCouleur + " et " + infoCourant);
     }
 
     /**
@@ -54,10 +53,19 @@ public class Cameneons {
     /**
      * Cette methode est utilise dans l'etat quand le cameneos faire un mutation
      */
-    public void mutation() {
+    public void faireMutation() {
         this.donnerInformation("je veux faire une mutation");
         //Pour faire savoir le couleur de partenaire
         //Pour faire changer ma couleur
         this.donnerInformation("la mutation est fini");
+    }
+
+    public void run() {
+        while (true) {
+            manger();
+            entrainer();
+            allerAuMail();
+            faireMutation();
+        }
     }
 }

@@ -1,3 +1,5 @@
+package accov;
+
 /**
  * <h1>Couleur Class</h1>
  * Ce class est pour le management des couleur des cameneon
@@ -15,10 +17,10 @@ public class Couleur {
     public static final Couleur JAUNE = new Couleur(valeurJaune);
 
     public Couleur(int valeurDeCouleur) {
-        this.couleurInterieure = valeurDeCouleur;
+        this.couleurInterieure = valeurDeCouleur % 3;
     }
 
-     /**
+    /**
      * Cette methode est utilise pour change le couleur de cameneon
      */
     public Couleur changerCouleur(Couleur autreCameneonCouleur) {
@@ -27,13 +29,12 @@ public class Couleur {
         }
         return new Couleur(3 - this.couleurInterieure - autreCameneonCouleur.couleurInterieure);
     }
-    
+
     @Override
-    public String toString(){
-        if(this.couleurInterieure==valeurBleu){
+    public String toString() {
+        if (this.couleurInterieure == valeurBleu) {
             return "Bleu";
-        }
-        else if(this.couleurInterieure==valeurRouge){
+        } else if (this.couleurInterieure == valeurRouge) {
             return "Rouge";
         }
         return "Jaune";

@@ -1,3 +1,4 @@
+package accov;
 
 /**
  * <h1>Cameneos Class</h1>
@@ -9,11 +10,13 @@
  */
 public class Cameneons implements Runnable {
 
-    public IdentificateurCameneos id; //chaque cameneon est represente par une couleur unique
+    public Mail mail;
+    public IdentificateurCameneons id; //chaque cameneon est represente par une couleur unique
 
-    public Couleur monCouleur,autreCameneonCouleur;
+    public Couleur monCouleur, autreCameneonCouleur;
 
-    public Cameneons(IdentificateurCameneos id, Couleur couleur) {
+    public Cameneons(Mail mail, IdentificateurCameneons id, Couleur couleur) {
+        this.mail = mail;
         this.id = id;
         this.monCouleur = couleur;
     }
@@ -55,11 +58,14 @@ public class Cameneons implements Runnable {
      */
     public void faireMutation() {
         this.donnerInformation("je veux faire une mutation");
-        //Pour faire savoir le couleur de partenaire
-        //Pour faire changer ma couleur
+        this.autreCameneonCouleur=mail.Cooperation(this.id, monCouleur);
+        this.monCouleur=this.monCouleur.changerCouleur(autreCameneonCouleur);
         this.donnerInformation("la mutation est fini");
     }
 
+    /**
+     * Les actions que chaque cameneon fait
+     */
     public void run() {
         while (true) {
             manger();

@@ -1,25 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+package accov;
 /**
+ * 
+ * <h1>Mail Class</h1>
  *
- * @author peter.bardawil
+ * @author Peter Bardawil
  */
 public class Mail {
 
-    public Couleur monCouleur, autreCameneonCouleur;
+    public Couleur premiereCouleur, deuxiemeCouleur;//Les couleur des cameneon partenaire
+    public Boolean premiereAppelCameneon = true;//l'arrive de premiere Thread cameneon
+    public Boolean fautAttendre = false;//flag pour savoir quand le mail contient deux cameneon
 
     /**
-     * Cette methode est utilise pour fair le cooperation entre les cameneon
+     * Cette methode est utilise pour faire le cooperation entre les cameneon
      */
-    public Couleur Cooperation(IdentificateurCameneos identificateur, Couleur couleur) {
+    public synchronized Couleur Cooperation(IdentificateurCameneons identificateur, Couleur couleur) {
         Couleur nouveauCouleur;
-        // A Faire avoire le premiere thread 
-        // A Faire allouer une thread seulement est avoire le thread partenaire
-        // A Faire Changer couleur
-        // A Faire Entrer des nouveau thread et faire un nouveau mutation
+        //Fait tout les autre cameneon attendre si le mail contient deux cameneon partenaire
+        while (fautAttendre) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+
+            }
+        }
+        if (this.premiereAppelCameneon) {
+            this.premiereCouleur = couleur;
+            this.premiereAppelCameneon = false;
+            while (!this.premiereAppelCameneon) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+
+                }
+            }
+            this.fautAttendre=false;
+            nouveauCouleur=this.deuxiemeCouleur;
+            notifyAll();
+        }
+        else{
+            this.deuxiemeCouleur=couleur;
+            nouveauCouleur=this.premiereCouleur;
+            this.premiereAppelCameneon=true;
+            this.fautAttendre=true;
+            notifyAll();
+        }
+        return nouveauCouleur;
     }
 }

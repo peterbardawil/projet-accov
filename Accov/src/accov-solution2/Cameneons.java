@@ -2,9 +2,8 @@ package accov2;
 
 /**
  * <h1>Cameneos Class</h1>
- * Ce class est pour creer un objet cameneos avec l'abiliter de donner un
- * identificateur identique et une couleur apres que le cameneos est cree il
- * faut qu'il rencontre sont partnere pour faire une mutation
+ * Ce class est pour creer un objet cameneos avec l'abiliter de savoir
+ * l'info de cameneon de socket et savoir sa couleur
  *
  * @author Peter Bardawil
  */

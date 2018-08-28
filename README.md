@@ -10,11 +10,9 @@ Cette documentation est faite on utilisant javadoc. Veuillez voir le lien ci-des
 
 ## Commencer par installation
 
-Ce projet consiste de deux solution pour faire un clonage ustiliser c'est commande:
+Ce projet consiste de deux solution pour faire un clonage Veuillez voir le lien ci-dessous:
 
 [Clonage Http](https://github.com/peterbardawil/projet-accov.git)
-
-[Clonage SSH](git@github.com:peterbardawil/projet-accov.git)
 
 ## Authors
 

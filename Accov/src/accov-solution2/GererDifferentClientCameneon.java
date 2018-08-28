@@ -44,7 +44,7 @@ public class GererDifferentClientCameneon implements Runnable{
             System.out.println(this.cameneon.getCameneonClientSocket().getRemoteSocketAddress());
             String line;
             while (!(line = this.cameneon.getLecteur().readLine()).equals(".")) {
-                System.out.printf("Trace de serveur : %s\n", line);
+                System.out.printf("Trace de serveur la couleur est %s\n", line);
                 if (this.listeCameneon.getCompteClientAttendu() == 0) {
                     this.cameneon.setCouleur(line);
                     this.listeCameneon.setCompteClientAttendu("ajouter");

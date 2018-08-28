@@ -100,7 +100,7 @@ public class GererListeCameneon {
     public void gererMutation(Cameneons cameneon, Cameneons autreCameneon, String couleur) {
         cameneon.getEcriveur().println(couleur);
         autreCameneon.getEcriveur().println(couleur);
-        System.out.println("la mutation est fini Mon couleur est:" + "Bleu");
+        System.out.println("la mutation est fini et Mon couleur est:" +couleur);
         cameneon.setCouleur(null);
         this.setCompteClientAttendu("diminuer");
     }

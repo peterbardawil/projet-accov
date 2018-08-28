@@ -21,9 +21,9 @@ public class GererDifferentClientCameneon implements Runnable{
      * Constructeur.
      *
      * Gerer la cameneon qui arrive au serveur est le mettre dans la liste
-     * @param socket
-     * @param listeCameneon
-     * @throws java.io.IOException
+     * @param socket Socket de cameneon
+     * @param listeCameneon Liste des cameneon courant
+     * @throws java.io.IOException Exception produit par les operation lecture/ecriture
      */
     public GererDifferentClientCameneon(Socket socket, GererListeCameneon listeCameneon) throws IOException {
         this.cameneon = new Cameneons(socket);

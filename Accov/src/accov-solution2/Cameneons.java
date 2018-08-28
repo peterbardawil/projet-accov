@@ -28,7 +28,7 @@ public class Cameneons {
      *
      * @param socket Attribuer un socket client au cameneon qui veut se
      * connecter
-     * @throws java.io.IOException
+     * @throws java.io.IOException Exception produit par les operation lecture/ecriture
      */
     public Cameneons(Socket socket) throws IOException {
         cameneonClientSocket = socket;
@@ -49,7 +49,7 @@ public class Cameneons {
     /**
      * Cette methode est pour determiner le socket de courant cameneon objet
      *
-     * @param socket
+     * @param socket Socket du courant cameneon
      */
     public void setCameneonClientSocket(Socket socket) {
         this.cameneonClientSocket = socket;
@@ -67,7 +67,7 @@ public class Cameneons {
     /**
      * Cette methode est pour determiner le couleur de courant cameneon objet
      *
-     * @param Couleur
+     * @param Couleur Couleur de cameneon
      */
     public void setCouleur(String Couleur) {
         this.couleur = Couleur;

@@ -38,7 +38,7 @@ public class GererListeCameneon {
     /**
      * Cette methode est pour modifier la nombre client attendu
      *
-     * @param methode
+     * @param methode Pour savoir si il faut ajouter ou diminuer le nombre cameneon attendu
      */
     public void setCompteClientAttendu(String methode) {
         if (methode.equals("ajouter")) {
@@ -51,7 +51,7 @@ public class GererListeCameneon {
     /**
      * Cette methode est pour ajouter un client cameneon a la liste
      *
-     * @param cameneonClient
+     * @param cameneonClient Objet cameneon veut connecter
      */
     public void ajouterCameneonClient(Cameneons cameneonClient) {
         listeCameneon.add(cameneonClient);
@@ -60,8 +60,8 @@ public class GererListeCameneon {
     /**
      * Cette methode est pour supprimer un client cameneon de la liste
      *
-     * @param cameneon
-     * @throws java.io.IOException
+     * @param cameneon Objet Cameneon
+     * @throws java.io.IOException Exception produit par les operation lecture/ecriture
      */
     public void supprimerCameneonDeListe(Cameneons cameneon) throws IOException {
         cameneon.getLecteur().close();
@@ -73,8 +73,8 @@ public class GererListeCameneon {
     /**
      * Cette methode est pour faire la mutation entre les deux cameneon client
      *
-     * @param autreCameneon
-     * @param Couleur
+     * @param autreCameneon Objet Cameneon
+     * @param Couleur La couleur de cameneon
      */
     public synchronized void faireMutation(Cameneons autreCameneon, String Couleur) {
         this.listeCameneon.stream().filter((cameneon) -> (cameneon.getCouleur() != null)).forEach((cameneon) -> {
@@ -93,9 +93,9 @@ public class GererListeCameneon {
      /**
      * Cette methode est pour gerer la courant mutation entre les deux cameneon
      *
-     * @param cameneon
-     * @param autreCameneon
-     * @param couleur
+     * @param cameneon Objet cameneon
+     * @param autreCameneon La couleur d'un autre cameneon
+     * @param couleur La couleur de cameneon
      */
     public void gererMutation(Cameneons cameneon, Cameneons autreCameneon, String couleur) {
         cameneon.getEcriveur().println(couleur);

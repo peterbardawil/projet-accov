@@ -26,8 +26,8 @@ public class ServeurEtoile {
      * socket est cree sur la port 1323 qu'il faut etre connecter par le client
      * socket
      *
-     * @param listeCameneon
-     * @throws java.io.IOException
+     * @param listeCameneon la liste des cameneon courant
+     * @throws java.io.IOException exceptions produced by failed or interrupted I/O operations
      */
     public static void gererServeur(GererListeCameneon listeCameneon) throws IOException {
         ServerSocket serveurSocket = new ServerSocket(PORT);

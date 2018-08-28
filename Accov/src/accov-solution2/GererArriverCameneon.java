@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 
 public class GererArriverCameneon implements Runnable {
 
-    private final String arrete;
     private final PrintWriter ecriture;
     private final BufferedReader lecture;
     private String Couleur;
@@ -24,15 +23,13 @@ public class GererArriverCameneon implements Runnable {
      * Constructeur. Gerer l'ecriture est la lecture et l'ecriture de cameneon
      * pour savoir l'info courant de cette cameneon
      *
-     * @param lecture
-     * @param ecriture
-     * @param arret
-     * @param Couleur
+     * @param lecture Lecteur d'un cameneon message
+     * @param ecriture Ecriveur d'un cameneon message
+     * @param Couleur Couleur cameneon
      */
-    public GererArriverCameneon(BufferedReader lecture, PrintWriter ecriture, String arret, String Couleur) {
+    public GererArriverCameneon(BufferedReader lecture, PrintWriter ecriture, String Couleur) {
         this.lecture = lecture;
         this.ecriture = ecriture;
-        this.arrete = arret;
         this.Couleur = Couleur;
     }
 

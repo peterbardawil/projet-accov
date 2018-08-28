@@ -20,4 +20,4 @@ Ce projet consiste de deux solution pour faire un clonage Veuillez voir le lien 
 
 ## License
 
-Ce projet est sous le License MIT vous pouvez voir fichier [LICENSE.md](LICENSE.md)
+Ce projet est sous le License MIT vous pouvez voir fichier [LICENSE](LICENSE)
